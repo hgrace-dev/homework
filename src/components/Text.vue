@@ -4,17 +4,15 @@
       <div class="buttons">
         <button
           class="button"
-          :class="{ 'is-danger is-focused': listening }"
-          @click="listening ? stop() : start()"
+          :class="{ 'is-danger is-focused': speaking }"
+          @click="start"
         >
           <span class="icon">
             <i class="fas fa-microphone"></i>
           </span>
-          <span>
-            {{ listenBtnText }}
-          </span>
+          <span> {{ listenBtnText }}</span>
         </button>
-        <button class="button" @click="clearText">
+        <button class="button" @click="clear">
           <span class="icon">
             <i class="fas fa-eraser"></i>
           </span>
@@ -25,12 +23,15 @@
   </div>
   <div class="columns">
     <div class="column is-three-fifths">
-      <div class="box textbox is-fullheight">
-        <div class="is-flex-direction-row is-align-items-center">
-          <p class="is-size-1">
-            {{ finalText }}
-          </p>
-        </div>
+      <div
+        class="box textbox is-fullheight is-flex is-flex-direction-row is-align-items-center"
+      >
+        <input
+          class="input is-large is-borderless is-shadowless is-size-2"
+          type="text"
+          placeholder="Type something here..."
+          v-model="word"
+        />
       </div>
     </div>
     <div class="column">
@@ -46,35 +47,35 @@
 <script>
 import { ref, watch } from "vue";
 import axios from "axios";
-import SpeechService from "../services/speech";
+import TextService from "../services/text";
 
 export default {
   setup() {
-    let listenBtnText = ref("Start Listening");
-    let listening = ref(false);
-    let finalText = ref("");
+    let word = ref("");
+    let finalWord = ref("");
     let imageUrl = ref();
+    let speaking = ref(false);
+    let listenBtnText = ref("Start Speaking");
 
-    const speechService = new SpeechService();
+    const textService = new TextService();
 
     const start = () => {
-      speechService.start();
-      listening.value = true;
-      listenBtnText.value = "Stop Listening";
+      if (!word.value) return;
+      speaking.value = true;
+      finalWord.value = word.value;
+      textService.speak(word.value);
     };
 
     const stop = () => {
-      speechService.stop();
-      listening.value = false;
-      listenBtnText.value = "Start Listening";
+      speaking.value = false;
     };
 
-    const onResult = (text) => {
-      finalText.value = text.detail;
+    const clear = () => {
+      word.value = null;
     };
 
     let callApiTimeout = null;
-    watch(finalText, (finalText) => {
+    watch(finalWord, (finalText) => {
       if (!finalText) return;
 
       clearTimeout(callApiTimeout);
@@ -103,22 +104,14 @@ export default {
       );
     });
 
-    const clearText = () => {
-      finalText.value = null;
-      imageUrl.value = null;
-    };
-
-    speechService.addEventListener("result", onResult);
-    speechService.addEventListener("stop", stop);
-
+    textService.addEventListener("end", stop);
     return {
       start,
-      stop,
-      clearText,
-      listenBtnText,
-      listening,
-      finalText,
+      clear,
+      word,
       imageUrl,
+      speaking,
+      listenBtnText,
     };
   },
 };
@@ -127,5 +120,9 @@ export default {
 <style scoped>
 .is-fullheight {
   height: 100%;
+}
+
+.is-borderless {
+  border: none;
 }
 </style>

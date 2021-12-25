@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Applications from "../views/Applications";
 import Speech from "../components/Speech";
+import Text from "../components/Text";
 
 const routes = [
   {
@@ -11,6 +12,10 @@ const routes = [
   {
     path: "/app/speech",
     component: Speech,
+  },
+  {
+    path: "/app/text",
+    component: Text,
   },
   {
     path: "/about",
