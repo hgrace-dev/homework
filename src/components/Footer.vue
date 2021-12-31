@@ -1,9 +1,8 @@
 <template>
-  <footer class="footer">
-    <div class="content has-text-centered">
+  <footer class="footer has-background-primary-light">
+    <div class="content has-text-centered has-text-primary-dark">
       <p>
-        <strong>Homework</strong> by <a href="https://jgthms.com">Weirdloop</a>.
-        The source code is licensed
+        <span class="has-text-weight-semibold">Homework</span> by Weirdloop. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
       </p>
     </div>
@@ -15,5 +14,3 @@ export default {
   name: "Footer",
 };
 </script>
-
-<style scoped></style>
