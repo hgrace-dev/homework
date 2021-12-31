@@ -1,43 +1,45 @@
 <template>
-  <div class="columns py-3">
-    <div class="column">
-      <div class="buttons">
-        <button
-          class="button"
-          :class="{ 'is-danger is-focused': listening }"
-          @click="listening ? stop() : start()"
-        >
-          <span class="icon">
-            <i class="fas fa-microphone"></i>
-          </span>
-          <span>
-            {{ listenBtnText }}
-          </span>
-        </button>
-        <button class="button" @click="clearText">
-          <span class="icon">
-            <i class="fas fa-eraser"></i>
-          </span>
-          <span>Clear</span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column is-three-fifths">
-      <div class="box textbox is-fullheight">
-        <div class="is-flex-direction-row is-align-items-center">
-          <p class="is-size-1">
-            {{ finalText }}
-          </p>
+  <div class="container">
+    <div class="columns py-3">
+      <div class="column">
+        <div class="buttons">
+          <button
+            class="button"
+            :class="{ 'is-danger is-focused': listening }"
+            @click="listening ? stop() : start()"
+          >
+            <span class="icon">
+              <i class="fas fa-microphone"></i>
+            </span>
+            <span>
+              {{ listenBtnText }}
+            </span>
+          </button>
+          <button class="button" @click="clearText">
+            <span class="icon">
+              <i class="fas fa-eraser"></i>
+            </span>
+            <span>Clear</span>
+          </button>
         </div>
       </div>
     </div>
-    <div class="column">
-      <div class="box imagebox">
-        <figure class="image is-4by3">
-          <img :src="imageUrl" alt="" v-if="imageUrl" />
-        </figure>
+    <div class="columns">
+      <div class="column is-three-fifths">
+        <div class="box textbox is-fullheight">
+          <div class="is-flex-direction-row is-align-items-center">
+            <p class="is-size-1">
+              {{ finalText }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="box imagebox">
+          <figure class="image is-4by3">
+            <img :src="imageUrl" alt="" v-if="imageUrl" />
+          </figure>
+        </div>
       </div>
     </div>
   </div>

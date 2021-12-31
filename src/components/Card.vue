@@ -1,5 +1,5 @@
 <template>
-  <div class="card is-clickable">
+  <div class="card is-clickable is-fullheight">
     <div class="card-image">
       <figure class="image is-4by3">
         <slot name="image"></slot>
@@ -24,4 +24,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.is-fullheight {
+  height: 100%;
+}
+</style>

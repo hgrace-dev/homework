@@ -1,44 +1,46 @@
 <template>
-  <div class="columns py-3">
-    <div class="column">
-      <div class="buttons">
-        <button
-          class="button"
-          :class="{ 'is-danger is-focused': speaking }"
-          @click="start"
+  <div class="container">
+    <div class="columns py-3">
+      <div class="column">
+        <div class="buttons">
+          <button
+            class="button"
+            :class="{ 'is-danger is-focused': speaking }"
+            @click="start"
+          >
+            <span class="icon">
+              <i class="fas fa-microphone"></i>
+            </span>
+            <span> {{ listenBtnText }}</span>
+          </button>
+          <button class="button" @click="clear">
+            <span class="icon">
+              <i class="fas fa-eraser"></i>
+            </span>
+            <span>Clear</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-three-fifths">
+        <div
+          class="box textbox is-fullheight is-flex is-flex-direction-row is-align-items-center"
         >
-          <span class="icon">
-            <i class="fas fa-microphone"></i>
-          </span>
-          <span> {{ listenBtnText }}</span>
-        </button>
-        <button class="button" @click="clear">
-          <span class="icon">
-            <i class="fas fa-eraser"></i>
-          </span>
-          <span>Clear</span>
-        </button>
+          <input
+            class="input is-large is-borderless is-shadowless is-size-2"
+            type="text"
+            placeholder="Type something here..."
+            v-model="word"
+          />
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column is-three-fifths">
-      <div
-        class="box textbox is-fullheight is-flex is-flex-direction-row is-align-items-center"
-      >
-        <input
-          class="input is-large is-borderless is-shadowless is-size-2"
-          type="text"
-          placeholder="Type something here..."
-          v-model="word"
-        />
-      </div>
-    </div>
-    <div class="column">
-      <div class="box imagebox">
-        <figure class="image is-4by3">
-          <img :src="imageUrl" alt="" v-if="imageUrl" />
-        </figure>
+      <div class="column">
+        <div class="box imagebox">
+          <figure class="image is-4by3">
+            <img :src="imageUrl" alt="" v-if="imageUrl" />
+          </figure>
+        </div>
       </div>
     </div>
   </div>
