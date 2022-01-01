@@ -4,6 +4,7 @@ export default class SpeechService extends EventTarget {
   constructor() {
     super();
     this.recognition = new SpeechRecognition();
+    this.started = false;
     this.result = "created";
     this.recognition.lang = "en-EN";
     this.recognition.interimResults = false;
@@ -18,16 +19,19 @@ export default class SpeechService extends EventTarget {
     };
 
     this.recognition.onspeechend = () => {
+      this.started = false;
       this.recognition.stop();
       this.dispatchEvent(this.createStopEvent());
     };
   }
 
   start() {
-    this.recognition.start();
+    if (!this.started) this.recognition.start();
+    this.started = true;
   }
 
   stop() {
+    this.started = false;
     this.recognition.stop();
   }
 

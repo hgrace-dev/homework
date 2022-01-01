@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Applications from "../views/Applications";
 import Speech from "../components/Speech";
 import Text from "../components/Text";
+import GuessWord from "../components/GuessWord";
 
 const routes = [
   {
@@ -16,6 +17,10 @@ const routes = [
   {
     path: "/app/text",
     component: Text,
+  },
+  {
+    path: "/app/guessword",
+    component: GuessWord,
   },
   {
     path: "/about",

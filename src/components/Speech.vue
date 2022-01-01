@@ -26,12 +26,12 @@
     </div>
     <div class="columns">
       <div class="column is-three-fifths">
-        <div class="box textbox is-fullheight">
-          <div class="is-flex-direction-row is-align-items-center">
-            <p class="is-size-1">
-              {{ finalText }}
-            </p>
-          </div>
+        <div
+          class="box textbox is-fullheight is-flex-direction-row is-align-items-center"
+        >
+          <p class="is-size-1">
+            {{ finalText }}
+          </p>
         </div>
       </div>
       <div class="column">
@@ -77,7 +77,9 @@ export default {
 
     let callApiTimeout = null;
     watch(finalText, (finalText) => {
-      if (!finalText) return;
+      if (!finalText) {
+        return;
+      }
 
       clearTimeout(callApiTimeout);
       callApiTimeout = setTimeout(

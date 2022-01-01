@@ -30,10 +30,18 @@
         </Card>
       </div>
       <div class="column is-one-third">
-        <Card />
-      </div>
-      <div class="column is-one-third">
-        <Card />
+        <Card @click="changeRoute('/app/guessword')">
+          <template v-slot:image>
+            <img :src="wordguess" alt="GuessTheWord" />
+          </template>
+          <template v-slot:name>
+            <p class="title is-4">Guess the Word</p>
+          </template>
+          <template v-slot:text>
+            The classical guess the word game and you can use your voice!
+            <br />
+          </template>
+        </Card>
       </div>
     </div>
   </div>
@@ -44,6 +52,7 @@ import Card from "@/components/Card";
 
 import speechtotext from "../assets/speechtotext.svg";
 import texttospeech from "../assets/texttospeech.svg";
+import wordguess from "../assets/wordguess.svg";
 
 export default {
   name: "Applications",
@@ -51,6 +60,7 @@ export default {
     return {
       speechtotext,
       texttospeech,
+      wordguess,
     };
   },
   components: {

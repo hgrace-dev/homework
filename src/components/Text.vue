@@ -25,7 +25,7 @@
     <div class="columns">
       <div class="column is-three-fifths">
         <div
-          class="box textbox is-fullheight is-flex is-flex-direction-row is-align-items-center"
+          class="box is-fullheight is-flex is-flex-direction-row is-align-items-center"
         >
           <input
             class="input is-large is-borderless is-shadowless is-size-2"
