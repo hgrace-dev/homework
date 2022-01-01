@@ -109,7 +109,9 @@ export default {
 
     const end = () => {
       console.log("speech end");
-      setTimeout(() => startGame(), 2000);
+      if (gameStarted.value) {
+        setTimeout(() => startGame(), 2000);
+      }
     };
 
     let guessWord = computed(() => {

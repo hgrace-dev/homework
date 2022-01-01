@@ -8,6 +8,19 @@ const words = [
   "house",
   "window",
   "shoes",
+  "film",
+  "bed",
+  "cup",
+  "mobile",
+  "chocolate",
+  "milk",
+  "computer",
+  "glasses",
+  "headphones",
+  "sleep",
+  "book",
+  "lamp",
+  "pen",
 ];
 
 export default class Words extends EventTarget {
