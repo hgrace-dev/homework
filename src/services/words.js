@@ -21,7 +21,26 @@ const words = [
   "book",
   "lamp",
   "pen",
-];
+  "mustard",
+  "Mohawk",
+  "pyjamas",
+  "ticket",
+  "wig",
+  "medal",
+  "dog",
+  "nappie",
+  "cookie",
+  "tennis",
+  "jester",
+  "teacher",
+  "taxes",
+  "comic", 
+  "dumpling",
+  "mailman",
+  "rug",
+  "cube",
+  "chocolate"
+]
 
 export default class Words extends EventTarget {
   constructor() {
