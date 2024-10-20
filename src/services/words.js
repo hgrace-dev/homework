@@ -40,7 +40,24 @@ const words = [
   "rug",
   "cube",
   "chocolate",
-  "node"
+  "note",
+  "motel",
+  "wallet",
+  "brick",
+  "hockey",
+  "dagger",
+  "tatoo",
+  "boxer",
+  "symbol",
+  "medusa",
+  "jelly",
+  "bread",
+  "star",
+  "mermaid",
+  "lipstick",
+   "cupcake",
+   "ballet",
+   
 ]
 
 export default class Words extends EventTarget {
