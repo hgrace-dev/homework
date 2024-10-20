@@ -76,7 +76,8 @@ const words = [
    "bed",
    "punch",
    "football",
-   
+   "bacon",
+   "carrots",
 
    
    
