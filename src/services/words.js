@@ -71,6 +71,11 @@ const words = [
    "apple juice",
    "blender",
    "oven",
+   "lollipop",
+   "pillow",
+   "bed",
+   "punch",
+   "football",
    
 
    
