@@ -30,11 +30,12 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "node-sass": "4.14.1",
+    "node-sass": "^9.0.0",
     "prettier": "^2.2.1",
     "sass": "^1.45.0",
     "sass-loader": "8.x",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
