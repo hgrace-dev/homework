@@ -39,7 +39,8 @@ const words = [
   "mailman",
   "rug",
   "cube",
-  "chocolate"
+  "chocolate",
+  "node"
 ]
 
 export default class Words extends EventTarget {
