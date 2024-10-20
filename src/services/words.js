@@ -67,6 +67,14 @@ const words = [
    "firecraker",
    "pixie",
    "school",
+   "goat",
+   "apple juice",
+   "blender",
+   "oven",
+   
+
+   
+   
 
 ]
 
