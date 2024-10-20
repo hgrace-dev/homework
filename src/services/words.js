@@ -59,7 +59,15 @@ const words = [
    "ballet",
    "spray",
    "teeth",
-   
+   "bleach",
+   "tv reporter",
+   "tub",
+   "shower",
+   "homework",
+   "firecraker",
+   "pixie",
+   "school",
+
 ]
 
 export default class Words extends EventTarget {
