@@ -57,6 +57,8 @@ const words = [
   "lipstick",
    "cupcake",
    "ballet",
+   "spray",
+   "teeth",
    
 ]
 
